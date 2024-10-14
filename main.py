@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 
 
@@ -16,12 +18,18 @@ def get_drver():
   drver.get("http://automated.pythonanywhere.com")
   return drver
 
+  # catch only temperature number
+def cleantext(text):
+  output = float(text.split(": ")[1])
+  return output
+
 
   #specify what we are scraping from the page
 def main():
   drver = get_drver()
-  element = drver.find_element(by="xpath", value="/html/body/div[1]/div/h1[1]")
-  return element.text
+  time.sleep(2)
+  element = drver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]")
+  return cleantext(element.text)
 
 
 print(main())
