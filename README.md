@@ -1,4 +1,4 @@
-# Scraple simple text with Selenium
+# Auto login with Selenium 
 
 Pkgs:
 
