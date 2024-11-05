@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def get_drvier():
+def get_driver():
     # Set options to make browsing easier
     options = webdriver.ChromeOptions()
     options.add_argument("disable-infobars")
@@ -21,7 +21,7 @@ def get_drvier():
     return driver
 
 def main():
-    driver = get_drvier()
+    driver = get_driver()
 
     # Log in
     driver.find_element(by="id", value="id_username").send_keys("automated")
